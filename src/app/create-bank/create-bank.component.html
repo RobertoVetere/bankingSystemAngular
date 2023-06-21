@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+      <h4>Crear Banco</h4>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="createBank()">
+        <div class="form-group">
+          <label for="name">Nombre del Banco</label>
+          <input type="text" id="name" class="form-control" placeholder="Ingrese el nombre del banco" required [(ngModel)]="bankName" name="bankName">
+        </div>
+        <div class="form-group">
+          <label for="userName">Nombre de usuario</label>
+          <input type="text" id="userName" class="form-control" placeholder="Ingrese el nombre de usuario" required [(ngModel)]="userName" name="userName">
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" class="form-control" placeholder="Ingrese la contraseña" required [(ngModel)]="password" name="password">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Crear Banco</button>
+        </div>
+        <div *ngIf="!isFormValid" class="alert alert-danger">
+          Por favor, complete todos los campos.
+        </div>
+        <div *ngIf="bankCreated" class="alert alert-success">
+          Banco creado correctamente.
+        </div>
+      </form>
+    </div>
+  </div>
